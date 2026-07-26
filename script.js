@@ -197,6 +197,12 @@ document.addEventListener("DOMContentLoaded", () => {
     const params = new URLSearchParams(window.location.search);
     const visitor = params.get("visitor");
 
+    const resumeDownload = document.getElementById("resume-download");
+
+if (visitor === "candidate" && resumeDownload) {
+    resumeDownload.style.display = "none";
+}
+
     const hiringCTA = document.getElementById("hiring-contact");
     const candidateCTA = document.getElementById("candidate-contact");
 
