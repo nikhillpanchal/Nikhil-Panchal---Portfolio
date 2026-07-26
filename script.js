@@ -22,6 +22,8 @@ sections.forEach(section => {
     observer.observe(section);
 });
 
+
+
 // ===============================
 // Animated Counters
 // ===============================
@@ -68,39 +70,10 @@ const counterObserver = new IntersectionObserver((entries) => {
 counters.forEach(counter => counterObserver.observe(counter));
 
 
-// ===============================
-// Back To Top Button
-// ===============================
+// ================= ACTIVE NAVIGATION =================
 
-const backToTop = document.getElementById("backToTop");
-
-window.addEventListener("scroll", () => {
-
-    if (window.scrollY > 400) {
-        backToTop.classList.add("show");
-    } else {
-        backToTop.classList.remove("show");
-    }
-
-});
-
-backToTop.addEventListener("click", () => {
-
-    window.scrollTo({
-        top: 0,
-        behavior: "smooth"
-    });
-
-});
-
-// ===============================
-// Active Navigation
-// ===============================
-
-const navLinks = document.querySelectorAll("nav a");
-const pageSections = document.querySelectorAll(
-    "#hero, #help, #journey, #expertise, #community, #contact"
-);
+const pageSections = document.querySelectorAll("section");
+const navLinks = document.querySelectorAll(".nav-link");
 
 window.addEventListener("scroll", () => {
 
@@ -108,13 +81,10 @@ window.addEventListener("scroll", () => {
 
     pageSections.forEach(section => {
 
-        const sectionTop = section.offsetTop - 120;
+        const sectionTop = section.offsetTop - 140;
         const sectionHeight = section.offsetHeight;
 
-        if (
-            window.scrollY >= sectionTop &&
-            window.scrollY < sectionTop + sectionHeight
-        ) {
+        if (scrollY >= sectionTop) {
             current = section.getAttribute("id");
         }
 
@@ -131,6 +101,54 @@ window.addEventListener("scroll", () => {
     });
 
 });
+
+
+/// ===============================
+// Back To Top Button
+// ===============================
+
+const backToTop = document.getElementById("backToTop");
+
+if (backToTop) {
+
+    window.addEventListener("scroll", () => {
+
+        if (window.scrollY > 300) {
+            backToTop.classList.add("show");
+        } else {
+            backToTop.classList.remove("show");
+        }
+
+    });
+
+    backToTop.addEventListener("click", () => {
+
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+
+    });
+
+}
+
+// ===============================
+// Navbar Scroll Effect
+// ===============================
+
+const navbarElement = document.querySelector(".navbar");
+
+window.addEventListener("scroll", () => {
+
+    if (window.scrollY > 50) {
+        navbarElement.classList.add("scrolled");
+    } else {
+        navbarElement.classList.remove("scrolled");
+    }
+
+});
+
+
 // ===============================
 // Mobile Menu
 // ===============================
@@ -140,4 +158,58 @@ const navbar = document.getElementById("navbar");
 
 menuToggle.addEventListener("click", () => {
     navbar.classList.toggle("active");
+});
+
+// ===============================
+// Scroll Progress Bar
+// ===============================
+
+const scrollProgress = document.getElementById("scrollProgress");
+
+window.addEventListener("scroll", () => {
+
+    const scrollTop = window.scrollY;
+
+    const scrollHeight =
+        document.documentElement.scrollHeight -
+        window.innerHeight;
+
+    const progress = (scrollTop / scrollHeight) * 100;
+
+    scrollProgress.style.width = progress + "%";
+
+});
+
+window.addEventListener("load", () => {
+
+    const loader = document.getElementById("loader");
+
+    loader.classList.add("hidden");
+
+});
+
+/* ==========================
+   Dynamic CTA
+========================== */
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    const params = new URLSearchParams(window.location.search);
+    const visitor = params.get("visitor");
+
+    const hiringCTA = document.getElementById("hiring-contact");
+    const candidateCTA = document.getElementById("candidate-contact");
+
+    // Safety check
+    if (!hiringCTA || !candidateCTA) return;
+
+    if (visitor === "candidate") {
+        hiringCTA.style.display = "none";
+        candidateCTA.style.display = "block";
+    } else {
+        // Default = Hiring Manager
+        hiringCTA.style.display = "block";
+        candidateCTA.style.display = "none";
+    }
+
 });
