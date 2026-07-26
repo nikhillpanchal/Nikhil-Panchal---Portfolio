@@ -250,10 +250,16 @@ if (hiringForm) {
 
         try {
 
-            await fetch(SCRIPT_URL, {
-                method: "POST",
-                body: JSON.stringify(data)
-            });
+            const params = new URLSearchParams();
+
+Object.keys(data).forEach(key => {
+    params.append(key, data[key]);
+});
+
+await fetch(SCRIPT_URL, {
+    method: "POST",
+    body: params
+});
 
             alert("Thank you! Your message has been sent.");
 
@@ -302,10 +308,16 @@ if (candidateForm) {
 
         try {
 
-            await fetch(SCRIPT_URL, {
-                method: "POST",
-                body: JSON.stringify(data)
-            });
+            const params = new URLSearchParams();
+
+Object.keys(data).forEach(key => {
+    params.append(key, data[key]);
+});
+
+await fetch(SCRIPT_URL, {
+    method: "POST",
+    body: params
+});
 
             window.location.href = "thankyou.html";
 
