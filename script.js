@@ -219,3 +219,102 @@ if (visitor === "candidate" && resumeDownload) {
     }
 
 });
+
+// ===============================
+// Google Sheets Integration
+// ===============================
+
+const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbythGuVYvBWeeUr351jVymCSy-gIDUAtXlo4P0G2ontQsNmo3RmYKFDm4tyJTWiuycKjw/exec";
+
+// -------------------------
+// Hiring Manager Form
+// -------------------------
+
+const hiringForm = document.getElementById("hiringForm");
+
+if (hiringForm) {
+
+    hiringForm.addEventListener("submit", async (e) => {
+
+        e.preventDefault();
+
+        const formData = new FormData(hiringForm);
+
+        const data = {
+            type: "hiring",
+            name: formData.get("name"),
+            email: formData.get("email"),
+            company: formData.get("company"),
+            message: formData.get("message")
+        };
+
+        try {
+
+            await fetch(SCRIPT_URL, {
+                method: "POST",
+                body: JSON.stringify(data)
+            });
+
+            alert("Thank you! Your message has been sent.");
+
+            hiringForm.reset();
+
+        } catch (error) {
+
+            alert("Something went wrong. Please try again.");
+
+        }
+
+    });
+
+}
+
+// -------------------------
+// Candidate Form
+// -------------------------
+
+const candidateForm = document.getElementById("candidateForm");
+
+if (candidateForm) {
+
+    candidateForm.addEventListener("submit", async (e) => {
+
+        e.preventDefault();
+
+        const formData = new FormData(candidateForm);
+
+        const data = {
+
+            type: "candidate",
+
+            full_name: formData.get("full_name"),
+            email: formData.get("email"),
+            phone: formData.get("phone"),
+            current_role: formData.get("current_role"),
+            experience: formData.get("experience"),
+            notice_period: formData.get("notice_period"),
+            current_location: formData.get("current_location"),
+            preferred_location: formData.get("preferred_location"),
+            linkedin: formData.get("linkedin"),
+            resume_link: formData.get("resume_link")
+
+        };
+
+        try {
+
+            await fetch(SCRIPT_URL, {
+                method: "POST",
+                body: JSON.stringify(data)
+            });
+
+            window.location.href = "thankyou.html";
+
+        } catch (error) {
+
+            alert("Something went wrong. Please try again.");
+
+        }
+
+    });
+
+}
