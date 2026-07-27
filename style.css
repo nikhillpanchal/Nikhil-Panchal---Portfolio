@@ -1,3 +1,4 @@
+
 /* ==========================================
    GOOGLE FONTS
 ========================================== */
@@ -15,6 +16,8 @@
 
 html{
     scroll-behavior:smooth;
+    overflow-x:hidden;
+    width:100%;
 }
 
 body{
@@ -22,7 +25,11 @@ body{
     background:#0B1120;
     color:#F8FAFC;
     line-height:1.7;
+
+    width:100%;
+    max-width:100%;
     overflow-x:hidden;
+    position:relative;
 }
 
 /* ==========================================
@@ -30,12 +37,19 @@ body{
 ========================================== */
 
 .container{
-    width:min(1200px,92%);
+
+    width:100%;
+    max-width:1200px;
+
     margin:auto;
+
+    padding:0 20px;
+
 }
 
 section{
     padding:80px 0;
+    overflow:hidden;
 }
 
 .section-header{
@@ -116,7 +130,7 @@ body{
 
     color:#38BDF8;
 
-    transform:scale(1.03);
+    transform:scale(1);
 
     text-shadow:0 0 20px rgba(56,189,248,.35);
 
@@ -222,7 +236,7 @@ nav a:hover{
 ========================================== */
 
 .hero{
-    min-height:calc(100vh - 80px);
+    min-height:calc(100dvh - 80px);
 
     display:flex;
 
@@ -379,6 +393,8 @@ nav a:hover{
 
     position:relative;
 
+    overflow:hidden;
+
 }
 
 .hero-image img{
@@ -401,8 +417,7 @@ nav a:hover{
 .hero-image img:hover{
 
     transform:
-        translateY(-10px)
-        scale(1.02);
+        translateY(-10px);
 
 }
 
@@ -497,7 +512,7 @@ nav a:hover{
 
 .card:hover{
 
-    transform: translateY(-10px) scale(1.02);
+    transform: translateY(-10px);
 
     border-color:#38BDF8;
 
@@ -598,23 +613,13 @@ nav a:hover{
     line-height:1.8;
 }
 
-    @media (max-width:992px){
 
-    .help-grid{
-        grid-template-columns:1fr;
-    }
-}
 
 .help-grid{
-
     display:grid;
-
     grid-template-columns:repeat(3,1fr);
-
     gap:30px;
-
     margin-top:60px;
-
 }
 
 .help-item{
@@ -683,7 +688,7 @@ nav a:hover{
 
 .help-card:hover{
 
-transform: translateY(-8px) scale(1.01);
+transform: translateY(-8px);
 
 border-color:#38BDF8;
 
@@ -869,7 +874,7 @@ box-shadow:
 
 .timeline-content:hover{
 
-transform: translateY(-8px) scale(1.01);
+transform: translateY(-8px);
 
 border-color:#38BDF8;
 
@@ -979,7 +984,7 @@ box-shadow:
 
 .skill:hover{
 
-transform: translateY(-8px) scale(1.01);
+transform: translateY(-8px);
 
 border-color:#38BDF8;
 
@@ -1063,7 +1068,7 @@ box-shadow:
 
 .tool-card:hover{
 
-transform: translateY(-8px) scale(1.01);
+transform: translateY(-8px);
 
 border-color:#38BDF8;
 
@@ -1149,7 +1154,7 @@ box-shadow:
 
 .contact-card:hover{
 
-transform: translateY(-8px) scale(1.01);
+transform: translateY(-8px);
 
 border-color:#38BDF8;
 
@@ -1702,6 +1707,8 @@ textarea:focus-visible{
 
 }
 
+/*
+
 ::-webkit-scrollbar{
     width:10px;
 }
@@ -1718,3 +1725,5 @@ textarea:focus-visible{
 ::-webkit-scrollbar-thumb:hover{
     background:#2563EB;
 }
+
+*/
