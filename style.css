@@ -771,6 +771,25 @@ box-shadow:
 }
 
 /* ==========================================
+   HOW I ADD VALUE - MOBILE
+========================================== */
+
+@media (max-width: 768px) {
+
+    .help-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .help-card {
+        width: 100%;
+        max-width: 100%;
+        min-height: auto;
+    }
+
+}
+
+/* ==========================================
    MY JOURNEY
 ========================================== */
 
@@ -1727,3 +1746,50 @@ textarea:focus-visible{
 }
 
 */
+
+/* ==========================================
+   GLOBAL MOBILE RESPONSIVE
+========================================== */
+
+@media (max-width: 768px) {
+
+    .container{
+        padding:0 18px;
+    }
+
+    h1{
+        font-size:2.4rem;
+    }
+
+    h2{
+        font-size:2rem !important;
+    }
+
+    .section-intro{
+        font-size:1rem;
+        margin-bottom:40px;
+    }
+
+    .hero{
+        padding:30px 0 60px;
+    }
+
+    .hero-text h2{
+        font-size:18px;
+    }
+
+    .hero-text p{
+        font-size:16px;
+    }
+
+    .btn{
+        width:100%;
+        min-width:unset;
+    }
+
+    .footer-content{
+        flex-direction:column;
+        text-align:center;
+    }
+
+}
