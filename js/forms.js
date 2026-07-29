@@ -22,7 +22,7 @@ if (hiringForm) {
             mode: "no-cors",
             body: formData
         }).then(() => {
-            window.location.href = "thankyou.html";
+            window.location.href = "thankyou.html?visitor=hiring";
         }).catch(() => {
             alert("Something went wrong. Please try again.");
         });
@@ -58,7 +58,7 @@ if (candidateForm) {
             mode: "no-cors",
             body: formData
         }).then(() => {
-            window.location.href = "thankyou.html";
+            window.location.href = "thankyou.html?visitor=candidate";
         }).catch(() => {
             alert("Something went wrong. Please try again.");
         });
