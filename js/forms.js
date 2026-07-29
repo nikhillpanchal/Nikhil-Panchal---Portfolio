@@ -14,6 +14,7 @@ if (hiringForm) {
         formData.append("entry.2037502407", this.elements["name"].value);
         formData.append("entry.1547085643", this.elements["email"].value);
         formData.append("entry.2126895476", this.elements["company"].value);
+        formData.append("entry.1344403593", this.elements["designation"].value); // NEW
         formData.append("entry.204790715", this.elements["message"].value);
 
         fetch("https://docs.google.com/forms/d/e/1FAIpQLSfdJ0yOXhcoMcx4DisQ4fVMdryAeZGG3GEo39Q_DDhSx2tkqw/formResponse", {

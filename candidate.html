@@ -15,10 +15,92 @@
 
 <div class="container">
 
-    <a href="portfolio.html?visitor=candidate" class="back-btn">
+    <a href="index.html" class="back-btn">
         ← Back to Portfolio
     </a>
 
+<div id="hiring-section" style="display:none;">
+
+    <div class="form-box">
+
+        <h1>Let's Connect 👋</h1>
+
+        <p>
+            Hiring for a Technical Recruiter or Talent Acquisition role?
+            I'd love to learn more about your opportunity.
+            Please share your details below.
+        </p>
+
+        <p class="helper-text">
+            I'll review your message and get back to you as soon as possible.
+        </p>
+
+        <form id="hiringForm">
+
+            <label for="name">Full Name</label>
+            <input
+                id="name"
+                type="text"
+                name="name"
+                placeholder="Enter your full name"
+                required>
+
+            <label for="work_email">Work Email</label>
+            <input
+                id="work_email"
+                type="email"
+                name="email"
+                placeholder="Enter your work email"
+                required>
+
+            <label for="company">Company</label>
+            <input
+                id="company"
+                type="text"
+                name="company"
+                placeholder="Company name"
+                required>
+
+            <label for="designation">Designation</label>
+            <input
+                id="designation"
+                type="text"
+                name="designation"
+                placeholder="e.g. Talent Acquisition Manager"
+                required>
+
+            <label for="message">Message</label>
+            <input
+                id="message"
+                type="text"
+                name="message"
+                placeholder="Tell me about the opportunity"
+                required>
+
+            <button type="submit">
+                Send Message
+            </button>
+
+        </form>
+
+        <div class="privacy-box">
+
+            <h3>🔒 Privacy Notice</h3>
+
+            <p>
+                Your information will only be used to respond to your enquiry
+                regarding recruitment opportunities. It will never be shared
+                without your consent.
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+<div id="candidate-section">
+    
     <div class="form-box">
 
         <h1>Join My Talent Network 👋</h1>
@@ -153,15 +235,37 @@
         personal information with third parties without your consent.
     </p>
 
-</div>
+      </div> <!-- privacy-box -->
 
-    </div>
+    </div> <!-- form-box -->
 
-</div>
+</div> <!-- candidate-section -->
+
+</div> <!-- container -->
 
 <script src="js/portfolio.js"></script>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+    const params = new URLSearchParams(window.location.search);
+    const visitor = params.get("visitor");
+
+    const hiringSection = document.getElementById("hiring-section");
+    const candidateSection = document.getElementById("candidate-section");
+
+    if (visitor === "hiring") {
+        hiringSection.style.display = "block";
+        candidateSection.style.display = "none";
+    } else {
+        hiringSection.style.display = "none";
+        candidateSection.style.display = "block";
+    }
+
+});
+</script>
+
 <script src="js/forms.js"></script>
 
 </body>
-
 </html>
