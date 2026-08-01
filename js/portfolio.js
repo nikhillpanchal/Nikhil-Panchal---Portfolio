@@ -199,6 +199,38 @@ if (loader) {
 }
 
 // ===============================
+// Tools & Technologies Filter
+// ===============================
+
+const filterButtons = document.querySelectorAll(".tool-filter-btn");
+const toolItems = document.querySelectorAll("#toolTagsContainer .tool-pill");
+
+if (filterButtons.length && toolItems.length) {
+
+    filterButtons.forEach(button => {
+
+        button.addEventListener("click", () => {
+
+            filterButtons.forEach(btn => btn.classList.remove("active"));
+            button.classList.add("active");
+
+            const filter = button.dataset.filter;
+
+            toolItems.forEach(item => {
+
+                const matches = filter === "all" || item.dataset.category === filter;
+
+                item.classList.toggle("hidden", !matches);
+
+            });
+
+        });
+
+    });
+
+}
+
+// ===============================
 // Custom Contact Form -> Google Forms
 // ===============================
 
