@@ -22,13 +22,13 @@
             <h1>Thank You!</h1>
 
             <p class="subtitle">
-                Your profile has been submitted successfully.
+                Your message has been sent successfully.
             </p>
 
             <p id="thankyou-message">
-            Thank you for taking the time to share your details.
-            I'll review your profile carefully and contact you if a suitable
-            opportunity matches your skills and experience.
+                Thank you for reaching out. I appreciate you taking the time to
+                connect, and I'll review your message and get back to you as
+                soon as possible.
             </p>
 
             <div class="thankyou-buttons">
@@ -46,29 +46,6 @@
         </div>
 
     </div>
-
-    <script>
-const visitor = new URLSearchParams(window.location.search).get("visitor");
-
-const icon = document.querySelector(".success-icon");
-const heading = document.querySelector("h1");
-const subtitle = document.querySelector(".subtitle");
-const message = document.getElementById("thankyou-message");
-
-if (visitor === "hiring") {
-
-    icon.textContent = "🤝";
-
-    heading.textContent = "Thank You!";
-
-    subtitle.textContent =
-        "Your message has been received successfully.";
-
-    message.textContent =
-        "Thank you for reaching out regarding a recruitment opportunity. I appreciate your interest and will review your message carefully. I'll get back to you as soon as possible.";
-
-}
-</script>
 
 </body>
 

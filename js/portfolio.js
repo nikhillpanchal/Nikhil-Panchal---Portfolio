@@ -198,3 +198,106 @@ if (loader) {
     });
 }
 
+// ===============================
+// Custom Contact Form -> Google Forms
+// ===============================
+
+const contactForm = document.getElementById("contactForm");
+const formStatus = document.getElementById("formStatus");
+const hiddenIframe = document.getElementById("hidden_iframe");
+
+if (contactForm && hiddenIframe) {
+
+    let submitting = false;
+
+    contactForm.addEventListener("submit", () => {
+
+        submitting = true;
+
+        formStatus.textContent = "Sending...";
+        formStatus.className = "form-status sending";
+
+    });
+
+    hiddenIframe.addEventListener("load", () => {
+
+        if (!submitting) return;
+
+        submitting = false;
+
+        window.location.href = "thankyou.html";
+
+    });
+
+}
+
+// ===============================
+// Hero Typing Animation
+// ===============================
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    const roles = [
+        "Technical Recruiter",
+        "Talent Acquisition Specialist",
+        "Enterprise Technology Hiring",
+        "Cloud • AI • Cybersecurity Hiring"
+    ];
+
+    const typingText = document.getElementById("typing-text");
+    typingText.textContent = roles[0];
+
+    if (!typingText) return;
+
+    let roleIndex = 0;
+    let charIndex = 0;
+    let deleting = false;
+
+    function typeEffect() {
+
+        const currentRole = roles[roleIndex];
+
+        if (!deleting) {
+
+            typingText.textContent = currentRole.substring(0, charIndex + 1);
+
+            charIndex++;
+
+            if (charIndex === currentRole.length) {
+
+                deleting = true;
+
+                setTimeout(typeEffect, 2200);
+
+                return;
+            }
+
+        } else {
+
+            typingText.textContent = currentRole.substring(0, charIndex - 1);
+
+            charIndex--;
+
+            if (charIndex === 0) {
+
+                deleting = false;
+                roleIndex = (roleIndex + 1) % roles.length;
+
+            }
+
+        }
+
+        setTimeout(typeEffect, deleting ? 40 : 60);
+
+    }
+
+    setTimeout(() => {
+
+    deleting = true;
+    charIndex = roles[0].length;
+
+    typeEffect();
+
+}, 1800);
+
+});

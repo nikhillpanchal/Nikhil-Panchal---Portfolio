@@ -149,7 +149,7 @@
 
         <nav id="navbar">
             <ul>
-                <li><a href="#hero" class="nav-link">About</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
                 <li><a href="#help" class="nav-link">How I Add Value</a></li>
                 <li><a href="#journey" class="nav-link">My Journey</a></li>
                 <li><a href="#expertise" class="nav-link">Recruitment Expertise</a></li>
@@ -174,9 +174,10 @@
 
                 </h1>
 
-               <h2>
-               Technical Recruiter • Enterprise Technology Hiring • Talent Partner
-               </h2>
+              <h2 class="hero-role">
+              <span id="typing-text"></span>
+              <span class="typing-cursor">|</span>
+              </h2>
 
                <p>
                 I specialize in Enterprise Technology Recruitment, partnering with organizations to identify exceptional talent across Cloud, Cybersecurity, AI/ML, Infrastructure, Data Science, and Software Engineering while helping professionals discover meaningful career opportunities.
@@ -261,6 +262,63 @@
         </div>
 
     </section>
+
+<!-- ==========================
+     ABOUT ME
+========================== -->
+
+<section id="about" class="fade-section">
+
+    <div class="container about-content">
+
+        <h2>About Me</h2>
+
+        <p class="section-intro">
+
+            I'm a Technical Recruiter based in India with experience in Enterprise
+            Technology Hiring across Cloud, Cybersecurity, AI/ML, Infrastructure
+            and Software Engineering.
+
+        </p>
+
+        <div class="about-text">
+
+            <p>
+                I began my recruitment journey at <strong>NMS Consultant</strong>,
+                learning the fundamentals of sourcing, screening, interviewing
+                and candidate relationship management. I then moved to
+                <strong>Emorphis Technologies</strong>, where I expanded into
+                enterprise hiring across Cloud, Cybersecurity, Infrastructure
+                and Software Engineering while building strong hiring
+                partnerships.
+            </p>
+
+            <p>
+                I currently work at <strong>YASH Technologies</strong> as a
+                Technical Recruiter, driving enterprise technology recruitment
+                across AI/ML, Data Science, Cloud, Cybersecurity and
+                Infrastructure — while growing a community of over
+                <strong>94,000 professionals</strong> on LinkedIn.
+            </p>
+
+            <div class="about-stat-inline">
+
+                <div class="about-stat-number">90%+</div>
+
+                <div class="about-stat-label">Offer Acceptance Rate</div>
+
+                <p class="about-stat-detail">
+                    Reflecting consistently strong offer acceptance
+                    throughout my recruitment career.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
 
 <!-- ==========================
      HOW I ADD VALUE
@@ -527,6 +585,33 @@
 
 </div>
 
+            </div>
+
+            <div class="tool-card">
+
+                <h3>
+                    <i class="fas fa-database"></i>
+                    Applicant Tracking Systems
+                </h3>
+
+                <div class="tool-tags">
+
+    <div class="tool-item">
+        <img src="assets/icons/sap-successfactors.svg" alt="SAP SuccessFactors">
+        <span>SAP SuccessFactors</span>
+    </div>
+
+    <div class="tool-item">
+        <img src="assets/icons/freshteams.svg" alt="Freshteams">
+        <span>Freshteams</span>
+    </div>
+
+</div>
+
+            </div>
+
+        </div>
+
     </div>
 
 </section>
@@ -540,54 +625,56 @@
         <span class="section-tag">Let's Connect</span>
 
         <h2>
-            Choose How You'd Like to
-            <span>Connect</span>
+            Get In
+            <span>Touch</span>
         </h2>
 
         <p class="contact-intro">
-            Whether you're looking to hire exceptional talent or explore new
-            career opportunities, choose the option below and let's connect.
+            Open to exciting opportunities, hiring conversations, or just a chat about talent. Fill out the form below and I'll get back to you.
         </p>
 
-        <div class="connect-options">
+        <form
+            id="contactForm"
+            class="custom-contact-form"
+            action="https://docs.google.com/forms/d/e/1FAIpQLSeroqv0irZRMsLKkV4-oEa4kf9_RuCof6U4pnQInF2VQFmlAQ/formResponse"
+            method="POST"
+            target="hidden_iframe">
 
-            <!-- Hiring Team -->
-
-            <div class="connect-card">
-
-                <div class="connect-icon">👔</div>
-
-                <h3>Employer</h3>
-
-                <p>
-                    Hiring for a Technical Recruiter or Talent Acquisition role? Learn more about my experience and let's connect.
-                </p>
-
-                <a href="candidate.html?visitor=hiring" class="connect-btn">
-                    Discuss an Opportunity
-                </a>
-
+            <div class="form-group">
+                <label for="fullName">Full Name</label>
+                <input type="text" id="fullName" name="entry.1803866013" placeholder="Your name" required>
             </div>
 
-            <!-- Job Seeker -->
-
-            <div class="connect-card">
-
-                <div class="connect-icon">💼</div>
-
-                <h3>Job Seeker</h3>
-
-                <p>
-                    Looking for your next career opportunity? Share your profile and stay connected for suitable openings.
-                </p>
-
-                <a href="candidate.html?visitor=candidate" class="connect-btn">
-                    Submit Your Profile
-                </a>
-
+            <div class="form-group">
+                <label for="emailAddress">Email</label>
+                <input type="email" id="emailAddress" name="entry.1175780468" placeholder="you@example.com" required>
             </div>
 
-        </div>
+            <div class="form-group">
+                <label for="phoneNumber">Phone</label>
+                <input type="tel" id="phoneNumber" name="entry.1366505566" placeholder="Your phone number" required>
+            </div>
+
+            <div class="form-group">
+                <label for="companyName">Company</label>
+                <input type="text" id="companyName" name="entry.589895307" placeholder="Where you're reaching out from" required>
+            </div>
+
+            <div class="form-group">
+                <label for="messageBox">Message</label>
+                <textarea id="messageBox" name="entry.405107477" rows="5" placeholder="Tell me about the role you're hiring for, or the opportunity you're looking for" required></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary form-submit-btn">
+                <i class="fas fa-paper-plane"></i>
+                Send Message
+            </button>
+
+            <p id="formStatus" class="form-status"></p>
+
+        </form>
+
+        <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
 
     </div>
 
@@ -613,7 +700,7 @@
 
     <div class="footer-bottom">
         <p><em>Building trust. Creating opportunities. Connecting exceptional talent with the right organizations.</em></p>
-        <p>© 2026 Nikhil Panchal. All Rights Reserved.</p>
+        <p>© 2026 Nikhil Panchal · Built with <span class="footer-heart">❤️</span> · All Rights Reserved</p>
     </div>
 
 </footer>
