@@ -301,10 +301,6 @@ nav a:hover{
 
     font-size:22px;
 
-    line-height:1.8;
-
-    min-height:42px;
-
     color:#ffffff;
 
     margin-bottom:28px;
@@ -312,9 +308,6 @@ nav a:hover{
     line-height:1.6;
 
     min-height:34px;
-
-    display:flex;
-    align-items:center;
 
 }
 
@@ -1170,13 +1163,15 @@ box-shadow:
 
     border-radius:18px;
 
-    padding:22px 28px;
+    padding:32px 28px;
 
     display:flex;
 
-    align-items:center;
+    flex-direction:column;
 
-    gap:15px;
+    align-items:flex-start;
+
+    gap:14px;
 
     transition:.35s ease;
 
@@ -1196,7 +1191,7 @@ box-shadow:
 
 .skill i{
 
-    font-size:22px;
+    font-size:26px;
 
     color:#3B82F6;
 
@@ -1204,9 +1199,21 @@ box-shadow:
 
 .skill span{
 
-    font-size:18px;
+    font-size:19px;
 
     font-weight:600;
+
+}
+
+.skill-desc{
+
+    font-size:14.5px;
+
+    line-height:1.65;
+
+    color:#94A3B8;
+
+    margin:0;
 
 }
 
@@ -1870,6 +1877,15 @@ footer{
 
         order:-1;
 
+    }
+
+    .hero-image img{
+        width:220px;
+    }
+
+    .hero-image::before{
+        width:220px;
+        height:220px;
     }
 
     .hero-buttons{

@@ -38,6 +38,7 @@ const counterObserver = new IntersectionObserver((entries) => {
 
         const counter = entry.target;
         const target = Number(counter.dataset.target);
+        const suffix = counter.dataset.suffix !== undefined ? counter.dataset.suffix : "+";
 
         const duration = 1500; // 1.5 seconds
         const startTime = performance.now();
@@ -53,7 +54,7 @@ const counterObserver = new IntersectionObserver((entries) => {
             if (progress < 1) {
                 requestAnimationFrame(update);
             } else {
-                counter.innerText = target.toLocaleString() + "+";
+                counter.innerText = target.toLocaleString() + suffix;
             }
         }
 
